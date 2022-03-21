@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="fieldLabel">{{ fieldLabel }}*</h2>
+  <div>
+    <form
+      class="form"
+      [formGroup]="myForm"
+      (ngSubmit)="onSubmitReactiveForms()"
+      novalidate
+    >
+      <div class="input-group">
+        <input
+          class="form-control datepicker-field"
+          placeholder="Select end date"
+          angular-mydatepicker
+          name="reactiveFormsDate"
+          formControlName="myDate"
+          [options]="myDatePickerOptions"
+          #dp="angular-mydatepicker"
+          autocomplete="off"
+          (click)="toggleCalendar()"
+          (dateChanged)="onSelected($event)"
+        />
+        <div class="clear-label">
+          <Label>{{ clearLabel }}</Label
+          ><input type="radio" [checked]="clearValue" (click)="clearDate()" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
